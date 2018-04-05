@@ -1,0 +1,54 @@
+
+
+(1)
+This is an unsupervised problem because we are trying to discover
+structure—in this case, distinct clusters—on the basis of a data set.
+The goal in supervised problems, on the other hand, is to try to predict
+some outcome vector such as survival time or response to drug treatment.
+
+
+(2)
+Clustering
+Unsupervised Learning.
+
+Definition:
+Clustering refers to a very broad set of techniques for finding subgroups(unknown subgroups), or clustering
+clusters, in a data set. When we cluster the observations of a data set, we
+seek to partition them into distinct groups so that the observations within
+each group are quite similar to each other, while observations in different
+groups are quite different from each other.
+
+Example:
+* Our goal is to perform market segmentation by identifying
+subgroups of people who might be more receptive to a particular form
+of advertising.
+
+* Perhaps there are a few different unknown
+subtypes of breast cancer. Clustering could be used to find these
+subgroups.
+
+
+K-means clustering
+
+Definition:
+we seek to partition the observations into a pre-specified
+number of clusters.
+
+Formula and intuition refer to Introduction to statistical learning page 387 or 
+from a web browser page 402.
+
+Algorithm 10.1 K-Means Clustering
+    1. Randomly assign a number, from 1 to K, to each of the observations.
+        These serve as initial cluster assignments for the observations.
+    2. Iterate until the cluster assignments stop changing:
+        (a) For each of the K clusters, compute the cluster centroid. The
+        kth cluster centroid is the vector of the p feature means for the
+        observations in the kth cluster.
+        (b) Assign each observation to the cluster whose centroid is closest
+        (where closest is defined using Euclidean distance).
+        
+Because the K-means algorithm finds a local rather than a global optimum,
+the results obtained will depend on the initial (random) cluster assignment
+of each observation in Step 1 of Algorithm 10.1. For this reason,
+it is important to run the algorithm multiple times from different random initial configurations.
+
