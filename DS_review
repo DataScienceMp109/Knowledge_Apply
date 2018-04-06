@@ -52,3 +52,46 @@ the results obtained will depend on the initial (random) cluster assignment
 of each observation in Step 1 of Algorithm 10.1. For this reason,
 it is important to run the algorithm multiple times from different random initial configurations.
 
+
+(3)
+Formula and intuition refer to Introduction to statistical learning page 39 or 
+from a web browser page 54.
+
+One such method is the K-nearest neighbors (KNN) classifier. Given a positive in- K-nearest
+teger K and a test observation x0, the KNN classifier first identifies the neighbors
+K points in the training data that are closest to x0, represented by N0.
+It then estimates the conditional probability for class j as the fraction of
+points in N0 whose response values equal j:
+Pr(Y = j|X = x0) = 1
+K
+i∈N0
+I(yi = j). (2.12)
+Finally, KNN applies Bayes rule and classifies the test observation x0 to the class with the largest probability.
+
+
+(4) 2.2.2 The Bias-Variance Trade-Of
+Formula and intuition refer to Introduction to statistical learning page 34 or 
+from a web browser page 48.
+
+Variance refers to the amount by which ˆf would change if we
+estimated it using a different training data set.
+
+On the other hand, bias refers to the error that is introduced by approximating
+a real-life problem, which may be extremely complicated, by a much
+simpler model. 
+
+As a general rule, as we use more flexible methods, the variance will
+increase and the bias will decrease.
+
+The relationship between bias, variance, and test set MSE given in Equation
+2.7 and displayed in Figure 2.12 is referred to as the bias-variance
+trade-off. Good test set performance of a statistical learning method re- bias-variance
+quires low variance as well as low squared bias.
+
+
+(5) Assessing Model Accuracy
+Formula and intuition refer to Introduction to statistical learning page 29 or 
+from a web browser page 44.
+
+In the regression setting, the most commonly-used measure is the mean squared error (MSE).
+The average squared prediction error for these test observations (x0, y0).
